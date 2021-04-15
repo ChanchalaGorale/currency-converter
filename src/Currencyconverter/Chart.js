@@ -1,35 +1,27 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 
-const data = {
-  labels: ["1", "2", "3", "4", "5", "6"],
-  datasets: [
-    {
-      label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
-      fill: false,
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgba(255, 99, 132, 0.2)",
-    },
-  ],
-};
-
-const options = {
-  scales: {
-    yAxes: [
+function Chart({ data, lable }) {
+  const mydata = {
+    labels: lable,
+    datasets: [
       {
-        ticks: {
-          beginAtZero: true,
-        },
+        label: "Last 60 days trend",
+        data: data,
+        fill: true,
+        backgroundColor: "rgb(30,144,255, 0.2)",
+        borderColor: "rgba(30,144,255)",
       },
     ],
-  },
-};
+  };
 
-function Chart() {
+  const options = {
+    scales: {},
+  };
+
   return (
     <div>
-      <Line data={data} options={options} />
+      <Line data={mydata} options={options} />
     </div>
   );
 }
