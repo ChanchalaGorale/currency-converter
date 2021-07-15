@@ -1,10 +1,10 @@
-import Currencyconverter from "./Currencyconverter/Currencyconverter";
+import Converter from "./Converter";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
-      <Currencyconverter />
+      <Converter />
     </div>
   );
 }
